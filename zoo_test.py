@@ -1,4 +1,5 @@
 import unittest
+from zoo import Zoo
 
 from zoo import Zoo
 from animal import Animal

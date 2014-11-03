@@ -8,6 +8,7 @@ class Animal:
         self.gender = gender
         self.weight = weight
         self.name = name
+        self.is_dead = False
         # else:
         #     raise Exception("NameExists")
 
@@ -19,4 +20,5 @@ class Animal:
         return "NomNomNom"
 
     def die(self):
+        self.is_dead = True
         return "I died."
