@@ -1,6 +1,17 @@
+import json
+
+
+@staticmethod
+def get_database(db, ):
+    with open(db, "r") as db_file:
+        db_data = json.load(db_file)
+    return db_data
+
+
 class Animal:
     DEFAULT_NAME = "Unknown"
     NAMES = []
+    database = get_database("database.json")
 
     def __init__(self, species, age, name, gender, weight):
         self.species = species
@@ -13,6 +24,13 @@ class Animal:
         #     raise Exception("NameExists")
 
     def grow(self, weight, age):
+        life_expectancy = Animal.database[self.species]["life_expectancy"]
+        aver_weight = Animal.database[self.species]["average_weight"]
+        if self.age + age > life_expectancy:
+            self.age = life_expectancy
+        if self.weight + weight > aver_weight:
+            self.weight = aver_weight
+
         self.weight += weight
         self.age += age
 

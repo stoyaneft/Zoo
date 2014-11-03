@@ -6,6 +6,7 @@ class Zoo:
         self.animals = []
         self.capacity = capacity
         self.budget = budget
+        self.database = self.get_database("database.json")
 
     def accommodate(self, animal):
         self.animals.append(animal)
@@ -43,3 +44,15 @@ class Zoo:
                     animal.name == name and
                     animal.is_dead is False):
                 self.animals.remove(animal)
+
+    def simulate(self, days, period):
+        self.see_animals()
+
+        for animal in self.animals:
+            if animal.is_dead:
+                print ("{} {} has died".format(animal.species, animal.name))
+
+        ###############################
+
+        for animal in self.animals:
+            animal.grow()
