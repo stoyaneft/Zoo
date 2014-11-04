@@ -43,3 +43,4 @@ class Zoo:
                     animal.name == name and
                     animal.is_dead is False):
                 self.animals.remove(animal)
+
