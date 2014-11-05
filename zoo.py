@@ -28,7 +28,7 @@ class Zoo:
         for s in species:
             males = filter(lambda x: x.gender == 'Male', species[s])
             reproducable_females = list(filter(
-                lambda x: x.gender == 'Female' and x.days_till_reproduce == 0,
+                lambda x: x.gender == 'Female' and x.days_till_reproduce == 0 and not x.in_gestation,
                 species[s]))
             if males and reproducable_females:
                 reproducable_females[0].in_gestation = True
@@ -55,8 +55,9 @@ class Zoo:
 
     def see_animals(self):
         for animal in self.animals:
-            print ("{} : {}, {}, {}".format(animal.name, animal.species,
-                                            animal.age, animal.weight))
+            print ("{} : {}, {}, {}, {:.2f}".format(
+                animal.name, animal.species,
+                animal.gender, animal.age, animal.weight))
 
     def move_to_habitat(self, species, name):
         for animal in self.animals:

@@ -9,7 +9,6 @@ def get_database(db):
 
 
 class Animal:
-    DEFAULT_NAME = "Unknown"
     NAMES = {}
     DATABASE = get_database("database.json")
 
@@ -22,13 +21,11 @@ class Animal:
         self.weight = weight
         self.is_alive = True
 
-        if name not in Animal.NAMES[self.species]:
+        if name in Animal.NAMES[self.species]:
+            raise NameError
+        else:
             Animal.NAMES[self.species].append(name)
             self.name = name
-        else:
-            Animal.NAMES[self.species].append(Animal.DEFAULT_NAME)
-            self.name = Animal.DEFAULT_NAME
-
         for species_info in Animal.DATABASE:
             if species_info['Species'] == self.species:
                 self.species_info = species_info
