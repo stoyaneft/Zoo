@@ -43,7 +43,7 @@ def main():
         interval = full_command[1]
         period = full_command[2]
         days = period_in_days(interval, period)
-        zoo.simulate(days)
+        zoo.simulate(days, period)
 
 if __name__ == '__main__':
     main()
