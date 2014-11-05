@@ -1,30 +1,30 @@
 [
     {
-        "species": "Tiger",
+        "Species": "Tiger",
         "life_expectancy": 3650,
         "food_type": "carnivore",
         "gestation": 7,
-        "newborn": 2,
+        "Newborn": 2,
         "average_weight": 20,
         "food/weight": 0.3,
-        "weight/age": 4
+        "weight/age": 0.5
     },
     {
-        "species": "Rabbit",
+        "Species": "Rabbit",
         "life_expectancy": 1500,
         "food_type": "herbivore",
         "gestation": 4,
-        "newborn": 1,
+        "Newborn": 1,
         "average_weight": 7,
-        "food/weight": 0.2,
-        "weight/age": 2.1
+        "food/weight": 0.1,
+        "weight/age": 0.1
     },
     {
-        "species": "Human",
+        "Species": "Human",
         "life_expectancy": 25550,
         "food_type": "carnivore",
         "gestation": 9,
-        "newborn": 3,
+        "Newborn": 3,
         "average_weight": 80,
         "food/weight": 0.05,
         "weight/age": 2
