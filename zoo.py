@@ -7,7 +7,7 @@ from animal import Animal
 class Zoo:
 
     INCOME_PER_ANIMAL = 60
-    NEWBORNS = 0
+    NEWBORNS_COUNT = 0
 
     def __init__(self, capacity, budget):
         self.animals = []
@@ -15,8 +15,11 @@ class Zoo:
         self.budget = budget
 
     def accommodate(self, animal):
-        self.animals.append(animal)
-        print('Animal accommodated successfully')
+        if len(self.animals) < self.capacity:
+            self.animals.append(animal)
+            print('Animal accommodated successfully')
+        else:
+            print('Zoo is full')
 
     def calculate_daily_income(self):
         self.budget += len(self.animals) * Zoo.INCOME_PER_ANIMAL
@@ -38,7 +41,7 @@ class Zoo:
         females = filter(lambda x: x.gender == 'Female', self.animals)
         for female in females:
             if female.gestation == 0:
-                name = 'newborn' + str(Zoo.NEWBORNS)
+                name = 'newborn' + str(Zoo.NEWBORNS_COUNT)
                 gender = choice('MF')
                 if gender == 'M':
                     gender = 'Male'
@@ -47,9 +50,11 @@ class Zoo:
                 newborn_weight = female.species_info['Newborn']
                 newborn = Animal(
                     female.species, 0, name, gender, newborn_weight)
-                self.animals.append(newborn)
+                self.accommodate(newborn)
                 female.gestation = female.species_info['gestation'] * 30
                 female.in_gestation = False
+                female.days_till_reproduce = 180
+                Zoo.NEWBORNS_COUNT += 1
                 return newborn
         return None
 

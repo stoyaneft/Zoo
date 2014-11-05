@@ -6,12 +6,12 @@
         "gestation": 7,
         "Newborn": 2,
         "average_weight": 20,
-        "food/weight": 0.3,
+        "food/weight": 400,
         "weight/age": 0.5
     },
     {
         "Species": "Rabbit",
-        "life_expectancy": 1500,
+        "life_expectancy": 150000000000,
         "food_type": "herbivore",
         "gestation": 4,
         "Newborn": 1,

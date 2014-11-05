@@ -6,8 +6,8 @@
         "gestation": 7,
         "Newborn": 2,
         "average_weight": 20,
-        "food/weight": 0.3,
-        "weight/age": 4
+        "food/weight": 400,
+        "weight/age": 0.5
     },
     {
         "Species": "Rabbit",
@@ -16,8 +16,8 @@
         "gestation": 4,
         "Newborn": 1,
         "average_weight": 7,
-        "food/weight": 0.2,
-        "weight/age": 2.1
+        "food/weight": 0.1,
+        "weight/age": 0.1
     },
     {
         "Species": "Human",
