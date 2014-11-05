@@ -53,18 +53,10 @@ class Zoo:
                 return True
         return False
 
-    def is_dead(self, species, name):
-        for animal in self. animals:
-            if (animal.species == species and
-                    animal.name == name and
-                    animal.is_dead is True):
-                return True
-        return False
-
     def see_animals(self):
         for animal in self.animals:
-            print "{} : {}, {}, {}".format(animal.name, animal.species,
-                                           animal.age, animal.weight)
+            print ("{} : {}, {}, {}".format(animal.name, animal.species,
+                                            animal.age, animal.weight))
 
     def move_to_habitat(self, species, name):
         for animal in self.animals:
