@@ -30,8 +30,8 @@ class Animal:
             self.name = Animal.DEFAULT_NAME
 
         for species_info in Animal.DATABASE:
-            if species_info['species'] == self.species:
-                self.species_info = Animal.DATABASE[self.species]
+            if species_info['Species'] == self.species:
+                self.species_info = species_info
 
         if self.gender == 'Female':
             self.days_till_reproduce = 0
@@ -46,9 +46,9 @@ class Animal:
         if self.weight > average_weight:
             self.weight = average_weight
         if self.gender == 'Female':
-            self.day_till_reproduce -= 1
-            if self.day_till_reproduce < 0:
-                self.day_till_reproduce = 0
+            self.days_till_reproduce -= 1
+            if self.days_till_reproduce < 0:
+                self.days_till_reproduce = 0
             if self.in_gestation:
                 self.gestation -= 1
 
@@ -62,7 +62,7 @@ class Animal:
         return money_per_kilo * kilos_eaten
 
     def is_dead(self):
-        if self.is_alive is False:
+        if not self.is_alive:
             return True
         life_expectancy = self.species_info['life_expectancy']
         chance_of_dying = self.age / life_expectancy
