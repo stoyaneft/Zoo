@@ -31,8 +31,10 @@ class Zoo:
         for s in species:
             males = filter(lambda x: x.gender == 'Male', species[s])
             reproducable_females = list(filter(
-                lambda x: x.gender == 'Female' and x.days_till_reproduce == 0 and not x.in_gestation,
-                species[s]))
+                lambda x: x.gender == 'Female' and
+                x.days_till_reproduce == 0 and
+                not x.in_gestation, species[s]))
+
             if males and reproducable_females:
                 reproducable_females[0].in_gestation = True
 

@@ -8,7 +8,8 @@ def get_command():
 
 def main():
     zoo = Zoo(15, 1500)
-    while True:
+    exit = False
+    while exit is not True:
         full_command = get_command()
         command = full_command[0]
         if command == 'see_animals':
@@ -33,6 +34,7 @@ def main():
             zoo.simulate(interval, period)
 
         elif command == 'exit':
+            exit = False
             print('Goodbye!')
             return
 
